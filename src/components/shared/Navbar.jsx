@@ -5,6 +5,7 @@ import ThemeToggle from "../ThemeToggle";
 import Link from "next/link";
 import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
 import { MdArrowOutward } from "react-icons/md";
+import { IoEarthOutline, IoPersonSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden lg:flex justify-between items-center p-2  rounded-full w-11/12 mx-auto mt-3 bg-bg-primary">
+      <nav className="hidden lg:flex justify-between items-center p-2  rounded-full w-11/12 mx-auto mt-2 bg-bg-primary">
         {/* Left side */}
 
         <div>
@@ -44,8 +45,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center gap-3">
           <ThemeToggle />
           {/* Login/register buttons */}
+          <p className="text-2xl text-accent rounded-full p-2 border border-border">
+            <IoPersonSharp />
+          </p>
           <Link href={"#"}>
-            <button className="bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <button className="flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <IoEarthOutline />
               Login
             </button>
           </Link>
@@ -57,7 +62,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* Tablet Navbar */}
-      <nav className="hidden md:flex lg:hidden justify-between items-center p-2  rounded-full w-11/12 mx-auto mt-3 bg-bg-primary">
+      <nav className="hidden md:flex lg:hidden justify-between items-center p-2  rounded-full w-11/12 mx-auto mt-2 bg-bg-primary">
         {/* Left side */}
 
         <div>
@@ -85,19 +90,22 @@ const Navbar = () => {
           </ul>
         </div>
         {/* Right side  */}
-
         <div className="flex justify-between items-center gap-3">
           <ThemeToggle />
+          <p className="text-2xl text-accent rounded-full p-2 border border-border">
+            <IoPersonSharp />
+          </p>
           {/* Login/register buttons */}
           <Link href={"#"}>
-            <button className="bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <button className="flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <IoEarthOutline />
               Login
             </button>
           </Link>
         </div>
       </nav>
       {/* Mobile Navbar */}
-      <nav className="flex md:hidden lg:hidden justify-between items-center w-11/12 mx-auto mt-3 rounded-full bg-bg-primary p-2">
+      <nav className="flex md:hidden lg:hidden justify-between items-center w-11/12 mx-auto mt-2 rounded-full bg-bg-primary p-2">
         {/* Left side */}
 
         <div>
@@ -111,13 +119,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center gap-3">
           <ThemeToggle />
           {/* Login/register buttons */}
+          <p className="text-2xl text-accent rounded-full p-2 border border-border">
+            <IoPersonSharp />
+          </p>
           <Link href={"#"}>
-            <button className="bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <button className="flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
+            <IoEarthOutline />
               Login
             </button>
           </Link>
           <button className="text-3xl" onClick={() => setMenuOpen(!menuOpen)}>
-           {menuOpen ?  <CiMenuFries /> : <CiMenuBurger />}
+            {menuOpen ? <CiMenuBurger /> : <CiMenuFries />}
           </button>
         </div>
       </nav>
@@ -132,9 +144,9 @@ const Navbar = () => {
               </h1>
               <button
                 className="text-3xl text-text"
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => setMenuOpen(false)}
               >
-                {menuOpen ?  <CiMenuFries /> : <CiMenuBurger />}
+                <CiMenuBurger />
               </button>
             </div>
             {/* Menu links - grid layout */}
