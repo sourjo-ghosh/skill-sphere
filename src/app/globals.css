@@ -1,3 +1,46 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
 
+@theme {
+  --color-primary: oklch(62.3% 0.214 259.8);
+  --color-primary-dark: oklch(54.6% 0.245 262.9);
+
+  --color-secondary: oklch(60.6% 0.25 292.7);
+  --color-secondary-dark: oklch(54.5% 0.245 293.0);
+
+  --color-accent: oklch(67.8% 0.234 41.0);
+  --color-accent-dark: oklch(57.6% 0.245 38.0);
+
+  --color-bg: oklch(100% 0 0);
+  --color-bg-secondary: oklch(98.5% 0.001 247.8);
+
+  --color-text: oklch(21.0% 0.034 264.0);
+  --color-text-secondary: oklch(55.4% 0.046 257.4);
+
+  --color-border: oklch(93.7% 0.015 257.6);
+
+  --color-success: oklch(72.3% 0.219 142.0);
+  --color-error: oklch(63.7% 0.237 25.3);
+}
+
+.dark {
+  --color-primary: oklch(72.3% 0.176 255.8);
+  --color-primary-dark: oklch(62.3% 0.214 259.8);
+
+  --color-secondary: oklch(72.3% 0.176 292.0);
+  --color-secondary-dark: oklch(60.6% 0.25 292.7);
+
+  --color-accent: oklch(75.0% 0.201 48.0);
+  --color-accent-dark: oklch(67.8% 0.234 41.0);
+
+  --color-bg: oklch(14.5% 0.035 264.0);
+  --color-bg-secondary: oklch(21.0% 0.034 264.0);
+
+  --color-text: oklch(93.7% 0.015 257.6);
+  --color-text-secondary: oklch(70.0% 0.035 260.0);
+
+  --color-border: oklch(30.0% 0.05 260.0);
+
+  --color-success: oklch(80.0% 0.195 142.0);
+  --color-error: oklch(75.0% 0.2 25.0);
+}
