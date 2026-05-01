@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  console.log(pathname)
+
   return (
     <>
       {/* Desktop Navbar */}

@@ -1,32 +1,50 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
-import { IoBookOutline, IoPeopleOutline, IoRocketOutline, IoTrophyOutline } from "react-icons/io5";
+import {
+  IoBookOutline,
+  IoPeopleOutline,
+  IoRocketOutline,
+  IoTrophyOutline,
+} from "react-icons/io5";
+import FeaturedCourse from "@/components/FeaturedCourse";
+import Instractors from "@/components/Instractors";
 
 const offerings = [
   {
     icon: IoBookOutline,
     title: "Expert-Led Courses",
-    description: "Learn from industry professionals with real-world experience and practical insights.",
+    description:
+      "Learn from industry professionals with real-world experience and practical insights.",
   },
   {
     icon: IoPeopleOutline,
     title: "Community Learning",
-    description: "Connect with peers, join study groups, and learn together in a supportive environment.",
+    description:
+      "Connect with peers, join study groups, and learn together in a supportive environment.",
   },
   {
     icon: IoRocketOutline,
     title: "Project-Based Learning",
-    description: "Build real projects for your portfolio while mastering new skills hands-on.",
+    description:
+      "Build real projects for your portfolio while mastering new skills hands-on.",
   },
   {
     icon: IoTrophyOutline,
     title: "Recognized Certificates",
-    description: "Earn certificates that validate your skills and boost your career prospects.",
+    description:
+      "Earn certificates that validate your skills and boost your career prospects.",
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  // const res = await fetch("/data.json");
+  const res = await fetch("http://localhost:3000/data.json");
+  const data = await res.json();
+
+  const featuredCoursesData = data
+    .filter((course) => course.rating >= 4.5)
+    .slice(0, 3);
   return (
     <div className="w-11/12 mx-auto">
       {/* Hero Section */}
@@ -38,7 +56,7 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               New courses available
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight">
               Learn, Build, and Share Your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
@@ -46,11 +64,12 @@ export default function Home() {
               </span>{" "}
               with Us!
             </h1>
-            
+
             <p className="text-lg text-text-secondary max-w-lg">
-              Level up your skills with modern, real-world learning. Join thousands of learners and start your journey today.
+              Level up your skills with modern, real-world learning. Join
+              thousands of learners and start your journey today.
             </p>
-            
+
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <Link href="/courses">
@@ -65,7 +84,7 @@ export default function Home() {
                 </button>
               </Link>
             </div>
-            
+
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
@@ -82,7 +101,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Right Image */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl blur-2xl"></div>
@@ -112,7 +131,8 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Everything you need to succeed in your learning journey, all in one place
+            Everything you need to succeed in your learning journey, all in one
+            place
           </p>
         </div>
 
@@ -125,12 +145,18 @@ export default function Home() {
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                 <item.icon className="text-2xl text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-semibold text-text mb-2">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-text mb-2">
+                {item.title}
+              </h3>
               <p className="text-text-secondary text-sm">{item.description}</p>
             </div>
           ))}
         </div>
       </section>
+      {/* Featured Courses */}
+      <FeaturedCourse data={featuredCoursesData} />
+      {/* Instructors */}
+      <Instractors></Instractors>
     </div>
   );
 }

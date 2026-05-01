@@ -6,7 +6,7 @@ const ThemeProviders = ({children}) => {
         <ThemeProvider attribute="class" defaultTheme="light">
       {children}
     </ThemeProvider>
-    );
+  );
 };
 
 export default ThemeProviders;

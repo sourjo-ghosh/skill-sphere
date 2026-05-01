@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced React & Next.js",
+    "instructor": "Sarah Smith",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build scalable apps with React and Next.js.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Emily Johnson",
+    "duration": "12 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Master design principles and user experience.",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "JavaScript Deep Dive",
+    "instructor": "Michael Brown",
+    "duration": "15 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Understand JavaScript concepts in depth.",
+    "image": "https://images.unsplash.com/photo-1573497161079-f3fd25cc6b90",
+    "category": "Development"
+  },
+  {
+    "id": 5,
+    "title": "Python for Data Science",
+    "instructor": "David Wilson",
+    "duration": "22 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Learn Python for data analysis and visualization.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    "category": "Data Science"
+  },
+  {
+    "id": 6,
+    "title": "Machine Learning Basics",
+    "instructor": "Sophia Lee",
+    "duration": "25 hours",
+    "rating": 4.6,
+    "level": "Intermediate",
+    "description": "Get started with machine learning concepts.",
+    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+    "category": "AI"
+  },
+  {
+    "id": 7,
+    "title": "Digital Marketing Mastery",
+    "instructor": "Chris Evans",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn SEO, ads, and social media marketing.",
+    "image": "https://images.unsplash.com/photo-1533750349088-cd871a92f312",
+    "category": "Marketing"
+  },
+  {
+    "id": 8,
+    "title": "Mobile App Development with Flutter",
+    "instructor": "Olivia Martin",
+    "duration": "16 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Build cross-platform mobile apps using Flutter.",
+    "image": "https://images.unsplash.com/photo-1526498460520-4c246339dccb",
+    "category": "Development"
+  },
+  {
+    "id": 9,
+    "title": "Cyber Security Essentials",
+    "instructor": "James Anderson",
+    "duration": "14 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Learn how to protect systems and data.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+    "category": "Security"
+  },
+  {
+    "id": 10,
+    "title": "Graphic Design with Photoshop",
+    "instructor": "Emma Watson",
+    "duration": "11 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Create stunning visuals using Photoshop.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "category": "Design"
+  }
+]
