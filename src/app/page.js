@@ -39,14 +39,13 @@ const offerings = [
 
 export default async function Home() {
   // const res = await fetch("/data.json");
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`);
+  const res = await fetch("http://localhost:3000/data.json");
   const data = await res.json();
 
   const featuredCoursesData = data
     .filter((course) => course.rating >= 4.5)
     .slice(0, 3);
   return (
-    
     <div className="w-11/12 mx-auto">
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center py-20">
@@ -157,6 +156,12 @@ export default async function Home() {
       {/* Featured Courses */}
       <FeaturedCourse data={featuredCoursesData} />
       {/* Instructors */}
+      {/* <Image
+      alt="sdjfasldkfjkls"
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        width={400}
+        height={200}
+      /> */}
       <Instractors></Instractors>
     </div>
   );

@@ -19,19 +19,17 @@ const FeaturedCourse = ({ data }) => {
               src={course.image}
               alt={course.title}
               height={450}
-
-
-
-              
               width={500}
             ></Image>
             <h1 className="text-lg font-semibold text-primary mt-3">
               {course.title}
             </h1>
-            <p className="text-text-secondary mt-2 flex-grow">
+            <p className="text-text-secondary mt-2 grow">
               {course.description}
             </p>
-            <h3 className="text-xl">Instructor: <span className="font-bold">{course.instructor}</span></h3>
+            <h3 className="text-xl">
+              Instructor: <span className="font-bold">{course.instructor}</span>
+            </h3>
             <div className="mt-4 flex justify-between text-sm">
               <span className="text-text-secondary">Category</span>
               <span className="text-text">{course.category}</span>
