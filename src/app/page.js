@@ -46,6 +46,7 @@ export default async function Home() {
     .filter((course) => course.rating >= 4.5)
     .slice(0, 3);
   return (
+    
     <div className="w-11/12 mx-auto">
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center py-20">
