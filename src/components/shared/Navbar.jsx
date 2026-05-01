@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  
 
   return (
     <>
@@ -49,7 +50,7 @@ const Navbar = () => {
           <p className="text-2xl text-accent rounded-full p-2 border border-border">
             <IoPersonSharp />
           </p>
-          <Link href={"/login"}>
+          <Link href={"/auth/login"}>
             <button className={'flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg  ${pathname === "/" ? "bg-primary" : "bg-primary/80"}'}>
               <IoEarthOutline />
               Login

@@ -91,7 +91,7 @@ export default function AboutUsPage() {
               <MdArrowOutward />
             </button>
           </Link>
-          <Link href="#">
+          <Link href="#instructors">
             <button className="border border-border text-text hover:bg-bg-secondary px-6 py-3 rounded-lg font-medium transition-colors">
               Meet Our Team
             </button>
