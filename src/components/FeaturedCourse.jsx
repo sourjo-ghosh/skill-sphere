@@ -19,6 +19,10 @@ const FeaturedCourse = ({ data }) => {
               src={course.image}
               alt={course.title}
               height={450}
+
+
+
+              
               width={500}
             ></Image>
             <h1 className="text-lg font-semibold text-primary mt-3">
