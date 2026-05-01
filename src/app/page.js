@@ -39,7 +39,7 @@ const offerings = [
 
 export default async function Home() {
   // const res = await fetch("/data.json");
-  const res = await fetch("https://skillsphere-sandy-three.vercel.app/data.json");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`);
   const data = await res.json();
 
   const featuredCoursesData = data
