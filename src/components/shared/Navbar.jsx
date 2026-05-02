@@ -7,12 +7,15 @@ import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
 import { MdArrowOutward } from "react-icons/md";
 import { IoEarthOutline, IoPersonSharp } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import { authClient, useSession } from "@/app/lib/auth-client";
+import Image from "next/image";
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  
-
+  const { data } = useSession();
+  const user = data?.user;
   return (
     <>
       {/* Desktop Navbar */}
@@ -29,16 +32,52 @@ const Navbar = () => {
         <div>
           <ul className="text-primary border border-border flex justify-between items-center gap-5 p-4 rounded-full bg-bg-secondary">
             <li>
-              <Link href={"/"} className={pathname === "/" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>Home</Link>
+              <Link
+                href={"/"}
+                className={
+                  pathname === "/"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href={"/courses"} className={pathname === "/courses" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>Courses</Link>
+              <Link
+                href={"/courses"}
+                className={
+                  pathname === "/courses"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                Courses
+              </Link>
             </li>
             <li>
-              <Link href={"/user-profile"} className={pathname === "/user-profile" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>My Profile</Link>
+              <Link
+                href={"/user-profile"}
+                className={
+                  pathname === "/user-profile"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                My Profile
+              </Link>
             </li>
             <li>
-              <Link href={"/about-us"} className={pathname === "/about-us" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>About us</Link>
+              <Link
+                href={"/about-us"}
+                className={
+                  pathname === "/about-us"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                About us
+              </Link>
             </li>
           </ul>
         </div>
@@ -47,17 +86,37 @@ const Navbar = () => {
         <div className="flex justify-between items-center gap-3">
           <ThemeToggle />
           {/* Login/register buttons */}
-          <p className="text-2xl text-accent rounded-full p-2 border border-border">
-            <IoPersonSharp />
+          <p className="text-2xl text-accent rounded-full p-1 border border-border">
+            {user ? (
+              <Image
+                src={user.image || "/default-avatar.png"}
+                alt="User"
+                width={35}
+                height={35}
+                className="rounded-full"
+              />
+            ) : (
+              <IoPersonSharp />
+            )}
           </p>
-          <Link href={"/auth/login"}>
-            <button className={'flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg  ${pathname === "/" ? "bg-primary" : "bg-primary/80"}'}>
-              <IoEarthOutline />
-              Login
+
+          {user ? (
+            <button
+              onClick={() => authClient.signOut()}
+              className="cursor-pointer flex items-center justify-center gap-2 bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/80 transition-colors"
+            >
+              Logout
             </button>
-          </Link>
+          ) : (
+            <Link href={"/auth/login"}>
+              <button className="cursor-pointer flex items-center justify-center gap-2 bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/80 transition-colors">
+                <IoEarthOutline className="text-xl" />
+                Login
+              </button>
+            </Link>
+          )}
           <Link href={"/courses"}>
-            <button className="bg-secondary text-white hover:bg-secondary/80 px-4 py-2 rounded-lg">
+            <button className="flex justify-center items-center cursor-pointer px-6 bg-secondary text-white hover:bg-secondary/80 py-2 rounded-lg font-medium transition-colors">
               Start Learning
             </button>
           </Link>
@@ -77,16 +136,52 @@ const Navbar = () => {
         <div>
           <ul className="text-primary border border-border flex justify-between items-center gap-5 p-4 rounded-full bg-bg-secondary">
             <li>
-              <Link href={"/"} className={pathname === "/" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>Home</Link>
+              <Link
+                href={"/"}
+                className={
+                  pathname === "/"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href={"/courses"} className={pathname === "/courses" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>Courses</Link>
+              <Link
+                href={"/courses"}
+                className={
+                  pathname === "/courses"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                Courses
+              </Link>
             </li>
             <li>
-              <Link href={"/user-profile"} className={pathname === "/user-profile" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>My Profile</Link>
+              <Link
+                href={"/user-profile"}
+                className={
+                  pathname === "/user-profile"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                My Profile
+              </Link>
             </li>
             <li>
-              <Link href={"/about-us"} className={pathname === "/about-us" ? "font-bold underline underline-offset-4 decoration-2" : "hover:text-primary transition-colors"}>About us</Link>
+              <Link
+                href={"/about-us"}
+                className={
+                  pathname === "/about-us"
+                    ? "font-bold underline underline-offset-4 decoration-2"
+                    : "hover:text-primary transition-colors"
+                }
+              >
+                About us
+              </Link>
             </li>
           </ul>
         </div>
@@ -98,10 +193,17 @@ const Navbar = () => {
           </p>
           {/* Login/register buttons */}
           <Link href={"/login"}>
-            <button className="flex justify-center items-center gap-2 bg-primary text-white hover:bg-primary/80 px-4 py-2 rounded-lg">
-              <IoEarthOutline />
-              Login
-            </button>
+            {user ? (
+              <button className="cursor-pointer w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium">
+                <IoEarthOutline />
+                Logout
+              </button>
+            ) : (
+              <button className="cursor-pointer w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium">
+                <IoEarthOutline />
+                Login
+              </button>
+            )}
           </Link>
         </div>
       </nav>
@@ -163,13 +265,19 @@ const Navbar = () => {
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className={`flex items-center justify-between px-5 py-4 transition-colors border-b border-border/50 ${
-                    pathname === item.href 
-                      ? "text-primary font-bold underline underline-offset-4 decoration-2" 
+                    pathname === item.href
+                      ? "text-primary font-bold underline underline-offset-4 decoration-2"
                       : "text-text hover:text-primary hover:bg-bg-secondary"
                   }`}
                 >
                   <span className="font-medium">{item.label}</span>
-                  <MdArrowOutward className={pathname === item.href ? "text-primary" : "text-text-secondary"} />
+                  <MdArrowOutward
+                    className={
+                      pathname === item.href
+                        ? "text-primary"
+                        : "text-text-secondary"
+                    }
+                  />
                 </Link>
               ))}
             </div>
@@ -182,13 +290,20 @@ const Navbar = () => {
               </div>
 
               <Link href="/login" onClick={() => setMenuOpen(false)}>
-                <button className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium">
-                  <IoEarthOutline />
-                  Login
-                </button>
+                {user ? (
+                  <button className="cursor-pointer w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium">
+                    <IoEarthOutline />
+                    Logout
+                  </button>
+                ) : (
+                  <button className="cursor-pointer w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium">
+                    <IoEarthOutline />
+                    Login
+                  </button>
+                )}
               </Link>
               <Link href="/courses" onClick={() => setMenuOpen(false)}>
-                <button className="mt-3 w-full bg-secondary text-white py-3 rounded-lg font-medium">
+                <button className="cursor-pointer mt-3 w-full bg-secondary text-white py-3 rounded-lg font-medium">
                   Start Learning
                 </button>
               </Link>
