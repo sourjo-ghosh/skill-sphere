@@ -30,7 +30,7 @@ const CourseUI = ({ courseData }) => {
 
   const filteredCourses = useMemo(() => {
     return courseData.filter((course) =>
-      course.title.toLowerCase().includes(value.toLowerCase())
+      course.title?.toLowerCase().includes(value?.toLowerCase()?? "")
     );
   }, [value, courseData]);
 
