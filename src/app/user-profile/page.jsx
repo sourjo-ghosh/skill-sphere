@@ -34,7 +34,6 @@ const UserProfile = () => {
       name: name,
       image: image,
     });
-
     if (data) {
       toast.success("Profile updated successfully!");
       setTimeout(() => {

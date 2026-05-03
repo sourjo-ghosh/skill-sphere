@@ -12,7 +12,7 @@ const allCoursersPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch("/data.json");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`);;
         if (!res.ok) {
           throw new Error(`Failed to load courses: ${res.status}`);
         }
