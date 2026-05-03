@@ -38,7 +38,7 @@ const UserProfile = () => {
       toast.success("Profile updated successfully!");
       setTimeout(() => {
         router.refresh();
-      }, 1000);
+      }, 1500);
     }
 
     if (error) {
