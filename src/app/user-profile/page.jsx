@@ -3,11 +3,19 @@
 import React, { useState } from "react";
 import { useSession, authClient } from "../lib/auth-client";
 import Image from "next/image";
-import { Button, Modal, Form, TextField, Label, Input, FieldError, Spinner } from "@heroui/react";
-import { Sparkles, Check } from "@gravity-ui/icons";
+import {
+  Button,
+  Modal,
+  Form,
+  TextField,
+  Label,
+  Input,
+  FieldError,
+  Spinner,
+} from "@heroui/react";
+import { Check } from "@gravity-ui/icons";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
-
 const UserProfile = () => {
   const { data } = useSession();
   const user = data?.user;
@@ -18,7 +26,7 @@ const UserProfile = () => {
     e.preventDefault();
     setLoading(true);
     const formData = new FormData(e.currentTarget);
-    
+
     const name = formData.get("name");
     const image = formData.get("image");
 
@@ -33,14 +41,12 @@ const UserProfile = () => {
         router.refresh();
       }, 1000);
     }
-    
+
     if (error) {
       toast.error("Update failed: " + error.message);
     }
     setLoading(false);
   };
-
-//   console.log("User session:", user);
   return (
     <>
       <ToastContainer position="top-right" autoClose={1500} />
@@ -63,7 +69,7 @@ const UserProfile = () => {
             <p className="text-lg">
               <strong>Email:</strong> {user.email}
             </p>
-            
+
             <Modal>
               <Button className="mt-5 px-4 py-2 bg-primary text-white rounded-2xl hover:bg-primary/80">
                 Update Profile
@@ -75,11 +81,20 @@ const UserProfile = () => {
                 <Modal.Container>
                   <Modal.Dialog className="sm:max-w-[400px]">
                     <Modal.Header className="items-center text-center">
-                      <Modal.Heading className="text-xl font-bold text-accent-dark">Update Profile</Modal.Heading>
+                      <Modal.Heading className="text-xl font-bold text-accent-dark">
+                        Update Profile
+                      </Modal.Heading>
                     </Modal.Header>
                     <Modal.Body>
-                      <Form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
-                        <TextField isRequired name="name" defaultValue={user.name}>
+                      <Form
+                        onSubmit={onSubmit}
+                        className="flex flex-col gap-4 w-full"
+                      >
+                        <TextField
+                          isRequired
+                          name="name"
+                          defaultValue={user.name}
+                        >
                           <Label>Name</Label>
                           <Input className="bg-bg border border-border mt-1" />
                           <FieldError />
@@ -90,11 +105,22 @@ const UserProfile = () => {
                           <FieldError />
                         </TextField>
                         <div className="flex gap-2 w-full mt-4">
-                          <Button className="w-full" slot="close" variant="secondary">
+                          <Button
+                            className="w-full"
+                            slot="close"
+                            variant="secondary"
+                          >
                             Cancel
                           </Button>
-                          <Button className="w-full flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90" type="submit">
-                            {loading ? <Spinner className="text-white size-4" /> : <Check className="size-4" />}
+                          <Button
+                            className="w-full flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90"
+                            type="submit"
+                          >
+                            {loading ? (
+                              <Spinner className="text-white size-4" />
+                            ) : (
+                              <Check className="size-4" />
+                            )}
                             Save Changes
                           </Button>
                         </div>

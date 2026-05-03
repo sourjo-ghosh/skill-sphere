@@ -108,5 +108,62 @@
     "description": "Create stunning visuals using Photoshop.",
     "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=800&auto=format&fit=crop",
     "category": "Design"
+  },
+  [
+  {
+    "id": 11,
+    "title": "Node.js Backend Development",
+    "instructor": "Ryan Cooper",
+    "duration": "17 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Build scalable backend APIs using Node.js and Express.",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
+    "category": "Development"
+  },
+  {
+    "id": 12,
+    "title": "Introduction to Cloud Computing",
+    "instructor": "Laura Adams",
+    "duration": "14 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Understand cloud basics with AWS, Azure, and GCP.",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "category": "Cloud"
+  },
+  {
+    "id": 13,
+    "title": "Mastering TypeScript",
+    "instructor": "Daniel Scott",
+    "duration": "13 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Learn TypeScript to write safer and scalable JavaScript.",
+    "image": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=800&auto=format&fit=crop",
+    "category": "Development"
+  },
+  {
+    "id": 14,
+    "title": "Advanced CSS & Tailwind",
+    "instructor": "Nina Patel",
+    "duration": "11 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Create modern responsive UI using CSS and Tailwind.",
+    "image": "https://images.unsplash.com/photo-1505685296765-3a2736de412f?q=80&w=800&auto=format&fit=crop",
+    "category": "Design"
+  },
+  {
+    "id": 15,
+    "title": "Git & GitHub for Developers",
+    "instructor": "Mark Wilson",
+    "duration": "8 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Master version control and collaboration with Git.",
+    "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop",
+    "category": "Tools"
   }
+]
 ]
