@@ -39,7 +39,7 @@ const offerings = [
 
 export default async function Home() {
   // const res = await fetch("/data.json");
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BETTER_AUTH_URL}/data.json`);;
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/data.json`)
   const data = await res.json();
   const featuredCoursesData = data
     .filter((course) => course.rating >= 4.5)
