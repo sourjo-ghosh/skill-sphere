@@ -12,7 +12,7 @@ const allCoursersPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BETTER_AUTH_URL}/data.json`);;
+        const res = await fetch(`https://skillsphere-sandy-three.vercel.app/data.json`);;
         if (!res.ok) {
           throw new Error(`Failed to load courses: ${res.status}`);
         }
